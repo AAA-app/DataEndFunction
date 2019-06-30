@@ -34,7 +34,7 @@ class Person () {
     fun getGraid (person1: Person) : String{
         var person1String = "err"
         when (person1){
-            Person() -> {
+            Person() -> {  // zakonchit
                 person1String = "yes i'm Student"
             }
         }
