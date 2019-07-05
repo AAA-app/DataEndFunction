@@ -1,17 +1,29 @@
 package com.example.dataendfunction
 
 fun main (args: Array<String>){
-    var num = 50
+    var num = 10
 
-    var multid = Array<Array<Array<Array<Int>>>>(2) {
+    var multiD = Array<Array<Array<Array<Int>>>>(2) {
         Array<Array<Array<Int>>>(2) {
             Array<Array<Int>>(2) {
                 Array<Int> (2) {num ++}
             }
         }
     }
-    var arr = multid[0][0][0][0]
-    println(arr)
+//    multiD[0][0][0][1] = 200
+//    var arr = multiD[0][0][0][1]
+//    println(arr)
+    for (i in 0..1) {
+        for (j in 0..1) {
+            for (k in 0..2) {
+                for (m in 0..1) {
+                    print(multiD[i][j][k][m])
+                    print(" ")
+
+                }
+            }
+        }
+    }
 
 
     myFirstFunction()

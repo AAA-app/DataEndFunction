@@ -4,10 +4,6 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.DatePicker
-import android.widget.LinearLayout
-import android.widget.TextView
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -97,15 +93,56 @@ class MainActivity : AppCompatActivity() {
 
         var p1 = Person ()
         var p2 = Person ()
+        var p3 = Person ()
+        p3.name = "Adam"
+        p3.age = 7.5
+
         p1.name = "Sasha"
         p1.age = 35.5
         p1.id = 524222487
+        p1.fatherName = "Papa"
+        p1.address =  "Netanya"
+
         p2.name = "Anna"
         p2.age = 34.5
         p2.id = 545654461
-        p1.fatherName = "Papa"
         p2.motherName = "Mama"
-        p2.address = "Zimbaba"
+        p2.address = "Netaniya"
+
+        var nameString = p1.haveSameName(person1 = p1, person2 = p2)
+        Log.d("TEST1", nameString.toString())
+
+        var ageString = p1.haveSameAge(person1 = p1, person2 = p2)
+        Log.d("TEST2", ageString.toString())
+
+        var OlderString = p1.getOlderPerson(person1 = p1, person2 = p2)
+        Log.d("TEST3", OlderString.toString())
+
+        var MotherString = p1.getMotherName(person2 = p2)
+        Log.d("TEST4", MotherString.toString())
+
+        var addressString = p1.getAddress(person1 = p1)
+        Log.d("TEST5", addressString.toString())
+
+        var graidString = p3.getGraid(person3 = p3)
+        Log.d("TEST6", graidString)
+
+
+        var father  = Person ()
+        father.age = 35.5
+        father.name = "Sasha"
+
+        var son = Person ()
+        son.age = 7.5
+        son.name = "Adam"
+
+        var grandmother = Person ()
+        grandmother.age = 67.5
+        grandmother.name = "Larisa"
+
+        var adultString = son.isAdult(per1 = son, per2 = father, per3 = grandmother)
+        Log.d("TEST7", adultString.toString())
+
     }
 
 
