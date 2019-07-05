@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import java.util.ArrayList
+import kotlin.Array
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
 //        val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
 //        val textView = TextView(this)
@@ -142,6 +146,28 @@ class MainActivity : AppCompatActivity() {
 
         var adultString = son.isAdult(per1 = son, per2 = father, per3 = grandmother)
         Log.d("TEST7", adultString.toString())
+
+    }
+
+
+    private fun checkArray (){
+        var date1: Date =  Date(29,6,2019)
+        var date2: Date = Date(10, 10, 2018)
+        var date3:Date =  Date(13, 4, 2083)
+        var date4:Date =  Date(13, 4, 2083)
+
+        var dateArray: ArrayList<Date> = arrayListOf(date1)
+        //dateArray.add(date2)
+        dateArray.set(0, date2)
+        dateArray.removeAt(0) //steret marah date2
+        var datearr: ArrayList<Date> = arrayListOf <Date> (date1, date2, date3, date4)
+        dateArray.addAll(datearr)
+
+        for (i: Int in 0 until dateArray.size)
+            Log.d("TEXT_DATE_ARRAY", dateArray[i].getCashDateDescription(Date()))
+
+
+
 
     }
 
