@@ -1,9 +1,11 @@
 package com.example.dataendfunction
 
-class Person () {
+open class Person() {
+
     var name = ""
     var age: Double = 0.0
     var id: Int = 0
+    var profession = ""
     var address = ""
     var motherName = ""
     var fatherName = ""
@@ -56,5 +58,7 @@ class Person () {
 
         }
     }
+
+
 }
 

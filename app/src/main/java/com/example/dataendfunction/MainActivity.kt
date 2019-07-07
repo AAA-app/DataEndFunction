@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import java.util.ArrayList
-import kotlin.Array
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 
 //        val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
@@ -30,46 +28,43 @@ class MainActivity : AppCompatActivity() {
 //        linearLayout.addView(datePicker)
 
 
-
-
-
-        var sasha = Date(27,3,1984)
-        var anna = Date(17,4,1984)
-        var adam = Date(2,1,2012)
-        var ronhel = Date(27,7,2018)
+        var sasha = Date(27, 3, 1984)
+        var anna = Date(17, 4, 1984)
+        var adam = Date(2, 1, 2012)
+        var ronhel = Date(27, 7, 2018)
         var kesh = Date(10, 7, 2019)
 
-        var birthday   = sasha.getMidDate(adam,ronhel)
-        Log.d("test1","${birthday.day}/${birthday.month}/${birthday.year}")
-        birthday  = sasha.getMidDate(sasha,anna)
-        Log.d("test2","${birthday.day}/${birthday.month}/${birthday.year}")
-        birthday   = sasha.getMidDate(sasha,anna)
-        Log.d("test3","${birthday.day}/${birthday.month}/${birthday.year}")
-        birthday   = sasha.getMidDate(adam,anna)
-        Log.d("test4","${birthday.day}/${birthday.month}/${birthday.year}")
-        birthday = sasha.getMidDate(ronhel,anna)
-        Log.d("test5","${birthday.day}/${birthday.month}/${birthday.year}")
+        var birthday = sasha.getMidDate(adam, ronhel)
+        Log.d("test1", "${birthday.day}/${birthday.month}/${birthday.year}")
+        birthday = sasha.getMidDate(sasha, anna)
+        Log.d("test2", "${birthday.day}/${birthday.month}/${birthday.year}")
+        birthday = sasha.getMidDate(sasha, anna)
+        Log.d("test3", "${birthday.day}/${birthday.month}/${birthday.year}")
+        birthday = sasha.getMidDate(adam, anna)
+        Log.d("test4", "${birthday.day}/${birthday.month}/${birthday.year}")
+        birthday = sasha.getMidDate(ronhel, anna)
+        Log.d("test5", "${birthday.day}/${birthday.month}/${birthday.year}")
 
-        var month = sasha.getMidDate(adam,ronhel)
-        Log.d("test1","${month.day}/${month.month}/${month.year}")
+        var month = sasha.getMidDate(adam, ronhel)
+        Log.d("test1", "${month.day}/${month.month}/${month.year}")
 
 
         //class tests
-        var date1: Date =  Date(29,6,2019)
+        var date1: Date = Date(29, 6, 2019)
         var date2: Date = Date(10, 10, 2018)
-        var date3:Date =  Date(13, 4, 2083)
+        var date3: Date = Date(13, 4, 2083)
 
         var resultDate = sasha.getLaterDate(date1, date2)
         Log.d("TEST1", "${resultDate.day}/${resultDate.month}/${resultDate.year}")
-        resultDate  = sasha.getLaterDate(date1, adam)
+        resultDate = sasha.getLaterDate(date1, adam)
         Log.d("TEST2", "${resultDate.day}/${resultDate.month}/${resultDate.year}")
         resultDate = sasha.getLaterDate(date1, ronhel)
         Log.d("TEST3", "${resultDate.day}/${resultDate.month}/${resultDate.year}")
         resultDate = sasha.getLaterDate(date1, date3)
         Log.d("TEST4", "${resultDate.day}/${resultDate.month}/${resultDate.year}")
 
-        var date4:Date =  Date(13, 4, 2004)
-        var date7:Date =  Date(13, 4, 2004)
+        var date4: Date = Date(13, 4, 2004)
+        var date7: Date = Date(13, 4, 2004)
 
         resultDate = sasha.getLaterDate(date4, date7)
         Log.d("TEST5", "${resultDate.day}/${resultDate.month}/${resultDate.year}")
@@ -95,21 +90,24 @@ class MainActivity : AppCompatActivity() {
         dayString = sasha.getDayOfWeek(8)
         Log.d("TESTSTRING8", dayString)
 
-        var p1 = Person ()
-        var p2 = Person ()
-        var p3 = Person ()
+        var p1 = Person()
+        var p2 = Person()
+        var p3 = Person()
         p3.name = "Adam"
         p3.age = 7.5
+        p3.profession = "Student"
 
         p1.name = "Sasha"
         p1.age = 35.5
         p1.id = 524222487
         p1.fatherName = "Papa"
-        p1.address =  "Netanya"
+        p1.profession = "Teacher"
+        p1.address = "Netanya"
 
         p2.name = "Anna"
         p2.age = 34.5
         p2.id = 545654461
+        p2.profession = "Teacher2"
         p2.motherName = "Mama"
         p2.address = "Netaniya"
 
@@ -132,15 +130,15 @@ class MainActivity : AppCompatActivity() {
         Log.d("TEST6", graidString)
 
 
-        var father  = Person ()
+        var father = Person()
         father.age = 35.5
         father.name = "Sasha"
 
-        var son = Person ()
+        var son = Person()
         son.age = 7.5
         son.name = "Adam"
 
-        var grandmother = Person ()
+        var grandmother = Person()
         grandmother.age = 67.5
         grandmother.name = "Larisa"
 
@@ -150,26 +148,53 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun checkArray (){
-        var date1: Date =  Date(29,6,2019)
+    private fun checkArray() {
+        var date1: Date = Date(29, 6, 2019)
         var date2: Date = Date(10, 10, 2018)
-        var date3:Date =  Date(13, 4, 2083)
-        var date4:Date =  Date(13, 4, 2083)
+        var date3: Date = Date(13, 4, 2083)
+        var date4: Date = Date(13, 4, 2083)
 
         var dateArray: ArrayList<Date> = arrayListOf(date1)
         //dateArray.add(date2)
         dateArray.set(0, date2)
         dateArray.removeAt(0) //steret marah date2
-        var datearr: ArrayList<Date> = arrayListOf <Date> (date1, date2, date3, date4)
+        var datearr: ArrayList<Date> = arrayListOf<Date>(date1, date2, date3, date4)
         dateArray.addAll(datearr)
 
-        for (i: Int in 0 until dateArray.size)
-            Log.d("TEXT_DATE_ARRAY", dateArray[i].getCashDateDescription(Date()))
-
-
-
-
+        for (i: Int in 0 until dateArray.size){
+            var date: Date = dateArray[i]
+            if (date.year >= 2020)
+               Log.d("TEXT_DATE_ARRAY", "After 2020 ${date.getCashDateDescription(Date())}")
+            else
+               Log.d("TEXT_DATE_ARRAY", "Before 2020 ${date.getCashDateDescription(Date())}")
     }
+    }
+    private fun chekShapeArray() {
+        var triangle1 = Triangle(height = 5, width = 10)
+        var triangle2 = Triangle(height = 10, width = 5)
+        var triangle3 = Triangle(height = 10, width = 10)
+        var circle1 = Circle(height = 5.5, width = 10.5,h = Double, w = Double.MAX_VALUE)
+        var circle2 = Circle(height = 10.5, width = 5.5,h = Double, w = Double.NaN)
+        var circle3 = Circle(height = 6.5, width = 15.5,h = Double, w = Double.MIN_VALUE)
+        var square1 = Square(height = 15.5, width = 6.5,h = Double, w = Double.MAX_VALUE)
+        var square2 = Square(height = 28.9, width = 36.5,h = Double, w = Double.MIN_VALUE)
+        var square3 = Square (height = 25.5, width = 35.5,h = Double, w = Double.NaN)
 
+        var shapeArrayList: ArrayList<Shape> = arrayListOf()
+        shapeArrayList.add (triangle1)
+        shapeArrayList.add (triangle2)
+        shapeArrayList.add (triangle3)
+        shapeArrayList.add (circle1)
+        shapeArrayList.add (circle2)
+        shapeArrayList.add (circle3)
+        shapeArrayList.add (square1)
+        shapeArrayList.add (square2)
+        shapeArrayList.add (square3)
 
+        for (i: Int in 0 until shapeArrayList.size){
+            var value: Shape = shapeArrayList[i]
+            Log.d("TesT_Shape", value.getArea().toString())
+
+        }
+    }
 }

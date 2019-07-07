@@ -1,7 +1,11 @@
 package com.example.dataendfunction
 
-class Triangle  : Shape () {
-    override fun getArea(): String {
-        return " Triengle Area "
+ class Triangle(override var height: Any, override var width: Any) : Shape(
+     w = Double,
+     h = Double,
+     W = Int
+ ) {
+    override fun getArea(): Double {
+        return getArea()
     }
 }

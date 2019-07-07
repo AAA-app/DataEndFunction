@@ -165,7 +165,7 @@ class Date() {
     }
 
     fun getBirthdayDateDescription(birthdayDateDescription: Date): String {
-        var birthdayDateDescriptionString: String = "ERROR"
+        var birthdayDateDescriptionString = "ERROR"
         when (birthdayDateDescription) {
             Date(27, 3, 1984) -> {
                 birthdayDateDescriptionString = "My Birthday"
